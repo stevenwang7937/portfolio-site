@@ -1,0 +1,119 @@
+/* =========================
+   PROJECT INTRO CARD
+   ========================= */
+
+.project-intro-card {
+  width: 100%;
+  aspect-ratio: 238 / 556;
+  padding: clamp(80px, 10vw, 144px) clamp(20px, 2.5vw, 40px);
+  background-image: url('/images/project-intro-background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.project-intro-card-icon-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-intro-card-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.project-intro-card-content {
+  width: 100%;
+  max-width: 157px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 34px);
+  margin-top: 0%;
+}
+
+.project-intro-card-title {
+  width: 100%;
+  font-style: italic;
+  font-size: var(--text-heading-md);
+  text-align: center;
+  margin: 0;
+}
+
+.project-intro-card-text {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: clamp(
+    0.875rem,        /* 16px — good for 1024 */
+    1vw,         /* fluid scaling */
+    1.375rem         /* 22px — good for 4K */
+  );
+}
+
+@media (min-width: 1500px) {
+  .project-intro-card-icon-wrapper {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .project-intro-card-icon-wrapper {
+    margin-top: 10%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .project-intro-card {
+    aspect-ratio: 238 / 667.2; /* 120% of 556 */
+  }
+  
+  .project-intro-card-icon-wrapper {
+    margin-top: 60%;
+  }
+}
+
+/* Mobile: decrease icon size */
+@media (max-width: 490px) {
+  .project-intro-card-icon-wrapper{
+    padding: 0;
+ 
+  }
+  .project-intro-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .project-intro-card{
+    padding-top: clamp(40px, 5vw, 80px);
+    padding-bottom: 0;
+    background-image: url('/images/project-intro-background-mobile.png');
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .project-intro-card {
+    aspect-ratio: auto;
+    height: 60vh;
+    overflow: hidden;
+    background-image: url('/images/project-intro-background-mobile.png');
+  }
+  .project-intro-card-icon-wrapper{
+    margin-top: 10vh;
+    padding-bottom: 2vh;
+ 
+  }
+  .project-intro-card-icon {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,160 @@
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* default inner (floating) */
+.nav__inner {
+  pointer-events: auto;
+  width: fit-content;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+
+  padding: 0px 10px;
+
+  /* less rounded like screenshot */
+  border-radius: 0px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+.nav__links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+  /* Apply text-nav-item token */
+  font-family: var(--font-body);
+  font-size: var(--text-nav-item-size);
+  font-weight: var(--text-nav-item-weight);
+  letter-spacing: var(--text-nav-item-letter);
+  color: var(--nav-text);
+}
+
+/* each item becomes a "block" like screenshot */
+.nav__link,
+.nav__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-body);
+  font-size: var(--text-nav-item-size);
+  font-weight: var(--text-nav-item-weight);
+  letter-spacing: var(--text-nav-item-letter);
+  color: var(--nav-text);
+
+  padding: var(--nav-item-pad-x);
+
+  border-radius: 0px; /* almost square */
+  text-decoration: none;
+
+  transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+}
+
+/* Reserve space for hover weight to prevent width shift */
+.nav__link::before,
+.nav__cta::before {
+  content: attr(data-text);
+  font-weight: var(--text-nav-item-weight-hover);
+  display: inline-block;
+  height: 0;
+  width: auto;
+  line-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  /* Use a tiny height to force width calculation */
+  min-height: 0.1px;
+}
+
+/* hover state: white opacity background + text highlight */
+.nav__link:hover,
+.nav__cta:hover {
+  background: var(--nav-hover-bg);
+  color: var(--nav-text-hover);
+  font-weight: var(--text-nav-item-weight);
+  text-shadow:
+    0.25px 0 0 currentColor,
+   -0.25px 0 0 currentColor;
+}
+
+/* CTA keeps blue background but still gets hover highlight effect */
+.nav__cta {
+  background: #0b4bd6;
+  color: #fff;
+}
+.nav__cta:hover {
+  background: #0043d4; /* keep blue */
+  /*box-shadow: 0 0 0 1px rgba(255,255,255,0.25) inset;*/
+  cursor: url("/cursors/chat-icon-24px.png") 12 12, pointer;
+}
+
+/* Floating state (inside hero near bottom) */
+.nav--floating {
+  position: fixed;
+  top: auto;
+  bottom: 48px;
+  opacity: 1;
+}
+
+/* Stuck state (fixed at top) */
+.nav--stuck {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  opacity: 1;
+}
+
+/* When stuck: 100vw bar, no border, content centered */
+.nav--stuck .nav__inner {
+  width: 100vw;
+  margin: 0;
+  justify-content: center;
+  
+  border: none;
+  border-radius: 0;
+
+  padding: 12px clamp(16px, 4vw, 48px);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav__inner {
+    max-width: 80%;
+    gap: calc(var(--space-lg) * 0.6);
+  }
+
+  .nav__link,
+  .nav__cta {
+    padding: calc(var(--nav-item-pad-x) * 0.6);
+  }
+  .nav__links {
+    gap: calc(10px * 0.6);
+  }
+  .nav__inner{
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+/* Hide regular navbar on very small screens */
+@media (max-width: 490px) {
+  .nav {
+    display: none;
+  }
+}

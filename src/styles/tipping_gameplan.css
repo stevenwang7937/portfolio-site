@@ -1,0 +1,53 @@
+/* =========================
+   TIPPING GAMEPLAN
+   ========================= */
+
+.tipping__gameplan {
+  width: 100%;
+  height: fit-content;
+  background-color: var(--color-bg);
+  padding: clamp(60px, 8vw, 120px) 0;
+}
+
+.tipping__gameplan .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tipping__gameplan-image-wrapper {
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  box-sizing: border-box;
+}
+
+.tipping__gameplan-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.tipping__gameplan-image--mobile {
+  display: none;
+}
+
+@media (max-width: 490px) {
+  .tipping__gameplan-image-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .tipping__gameplan-image--desktop {
+    display: none;
+  }
+  
+  .tipping__gameplan-image--mobile {
+    display: block;
+    width: 70%;
+  }
+}

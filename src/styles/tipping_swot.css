@@ -1,0 +1,196 @@
+/* =========================
+   TIPPING SWOT
+   ========================= */
+
+.tipping__swot {
+  width: 100%;
+  position: relative;
+  background-image: url('/images/tipping/swot-background2.svg');
+  background-size: 100vw auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.tipping__swot::before {
+  content: '';
+  display: block;
+  width: 100vw;
+  padding-bottom: 64.86%; /* Aspect ratio: 934/1440 = 0.6486 */
+  pointer-events: none;
+}
+
+.tipping__swot .content-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.tipping__swot-header {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.tipping__swot-strength,
+.tipping__swot-weakness,
+.tipping__swot-opportunities,
+.tipping__swot-threat {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+.tipping__swot-strength {
+  top: 0;
+  left: 15%;
+  padding-bottom: 15%;
+  
+}
+
+.tipping__swot-weakness {
+  top: 0;
+  right: 15%;
+  padding-bottom: 15%;
+  text-align: right;
+}
+
+.tipping__swot-opportunities {
+  bottom: 0;
+  left: 15%;
+  padding-top: 25%;
+}
+
+.tipping__swot-threat {
+  bottom: 0;
+  right: 15%;
+  padding-top: 25%;
+  text-align: right;
+}
+
+.tipping__swot-strength p,
+.tipping__swot-weakness p,
+.tipping__swot-opportunities p,
+.tipping__swot-threat p {
+  margin: 0;
+  width: 100%;
+  height: fit-content;
+}
+
+/* Hide title wrapper on desktop - only show in mobile */
+.tipping__swot-title-wrapper {
+  display: none;
+}
+
+.tipping__swot-letter {
+  width: clamp(40px, 5vw, 60px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.tipping__swot-title {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-tight);
+  color: var(--color-fg);
+  text-shadow: var(--text-shadow-engraved);
+  margin: 0;
+}
+
+.tipping__swot-content {
+  margin: 0;
+}
+
+@media (max-width: 490px) {
+  .tipping__swot {
+    background-image: none;
+    background-color: #090909;
+  }
+  
+  .tipping__swot::before {
+    display: none;
+  }
+  
+  .tipping__swot .content-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 4vw, 40px);
+    padding: clamp(40px, 5vw, 80px) 0;
+  }
+  
+  .tipping__swot-header {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+  
+  .tipping__swot-strength,
+  .tipping__swot-weakness,
+  .tipping__swot-opportunities,
+  .tipping__swot-threat {
+    position: relative;
+    width: 90%;
+    aspect-ratio: 1439 / 935; /* Match swot-background.svg dimensions */
+    min-height: fit-content;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: clamp(40px, 6vw, 64px) clamp(24px, 4vw, 40px);
+    padding-top: 5%;
+    background-image: url('/images/tipping/swot-background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  
+  .tipping__swot-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 1.5vw, 20px);
+    margin-bottom: clamp(16px, 2vw, 24px);
+  }
+  
+  .tipping__swot-letter {
+    display: none;
+  }
+  
+  .tipping__swot-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .tipping__swot-content {
+    font-family: var(--font-body);
+    font-size: var(--text-description);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-body);
+    color: var(--color-fg);
+    text-shadow: var(--text-shadow-engraved);
+  }
+}
+

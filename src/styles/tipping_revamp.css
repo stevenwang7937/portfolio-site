@@ -1,0 +1,126 @@
+/* =========================
+   TIPPING REVAMP
+   ========================= */
+
+.tipping__revamp {
+  width: 100%;
+  height: fit-content;
+  padding: clamp(40px, 5vw, 80px) 0;
+  background-color: var(--color-bg);
+}
+
+.tipping__revamp .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 80px);
+}
+
+.tipping__revamp-content {
+  width: 100%;
+  padding: 0 10vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 80px);
+}
+
+.tipping__revamp-title {
+  margin: 0;
+  text-align: left;
+}
+
+.tipping__revamp-items {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.tipping__revamp-arrow {
+  flex-shrink: 0;
+  width: clamp(30px, 4vw, 60px);
+  height: clamp(30px, 4vw, 60px);
+  align-self: center;
+  opacity: 0.8;
+}
+
+.tipping__revamp-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.tipping__revamp-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.tipping__revamp-text {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.tipping__revamp-highlight {
+  color: #F9B247;
+}
+
+.tipping__revamp-visual {
+  width: 100%;
+  padding: 0 10vw 0 15vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: clamp(40px, 6vw, 80px) 0;
+}
+
+.tipping__revamp-visual-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.tipping__revamp-visual-image--mobile {
+  display: none;
+}
+
+@media (max-width: 490px) {
+  .tipping__revamp-visual {
+    padding: 0 10vw 0 10vw;
+  }
+  .tipping__revamp-content{
+    padding: 0;
+  }
+  
+  .tipping__revamp-items {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(20px, 4vw, 40px);
+  }
+  
+  .tipping__revamp-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .tipping__revamp-image {
+    width: clamp(200px, 50vw, 300px);
+    max-width: 100%;
+  }
+  
+  .tipping__revamp-visual-image--desktop {
+    display: none;
+  }
+  
+  .tipping__revamp-visual-image--mobile {
+    display: block;
+  }
+}

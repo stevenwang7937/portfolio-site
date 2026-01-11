@@ -1,0 +1,120 @@
+/* =========================
+   OPENTEXT TOKENS
+   ========================= */
+
+.opentext__tokens {
+  position: relative;
+  width: 100%;
+  padding: clamp(40px, 5vw, 80px) 0;
+  background: var(--color-bg);
+}
+
+.opentext__tokens .content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 6%;
+}
+
+.opentext__tokens-left {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 20vh;
+  padding-top: 12vh;
+}
+
+.opentext__tokens-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.opentext__tokens-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.opentext__tokens-image--narrow {
+  width: 70%;
+}
+
+.opentext__tokens-subheader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.opentext__tokens-subheader__top {
+  margin: 0;
+  font-weight: var(--weight-regular);
+}
+
+.opentext__tokens-subheader__bottom {
+  margin: 0;
+}
+
+.opentext__tokens-right {
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20vh;
+}
+
+.opentext__tokens-content--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.opentext__tokens-content--right .opentext__tokens-subheader {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.opentext__tokens-image--right {
+  width: 100%;
+}
+
+.opentext__tokens-image--right-full {
+  width: 100%;
+}
+
+@media (max-width: 490px) {
+  .opentext__tokens .content-container {
+    flex-direction: column;
+  }
+  .opentext__tokens {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .opentext__tokens-left {
+    width: 100%;
+    gap: 5vh;
+  }
+  .opentext__tokens-right {
+    width: 100%;
+    gap: 5vh;
+    
+  }
+
+  .opentext__tokens-content--right{
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .opentext__tokens-content--right .opentext__tokens-subheader {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .opentext__tokens-subheader{
+    align-items: flex-start; 
+    text-align: left;
+  }
+
+  .opentext__tokens-subheader__top,
+  .opentext__tokens-subheader__bottom{
+    text-align: left;
+  }
+}

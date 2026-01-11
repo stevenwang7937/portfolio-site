@@ -1,0 +1,148 @@
+/* =========================
+   BOOKED TAKEAWAY
+   ========================= */
+
+.booked__takeaway {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url('/images/booked/takeaway-background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: clamp(80px, 5vw, 160px);
+  padding-bottom: clamp(80px, 5vw, 160px);
+}
+
+.booked__takeaway-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 56px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.booked__takeaway-header {
+  width: 100%;
+  margin-bottom: clamp(16px, 2vw, 32px);
+}
+
+.booked__takeaway-item {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: inline-flex;
+  gap: 12px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.booked__takeaway-item:last-child {
+  margin-bottom: 0;
+}
+
+.booked__takeaway-item-1 {
+  margin-left: clamp(0px, 5vw, 5vw);
+}
+
+.booked__takeaway-item-2 {
+  margin-left: clamp(0px, 50vw, 50vw);
+}
+
+.booked__takeaway-item-3 {
+  margin-left: clamp(0px, 20vw, 20vw);
+}
+
+@media (max-width: 768px) {
+  .booked__takeaway-item-1 {
+    margin-left: 0;
+  }
+
+  .booked__takeaway-item-2 {
+    margin-left: 0;
+  }
+
+  .booked__takeaway-item-3 {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .booked__takeaway-item-2 {
+    margin-left: clamp(0px, 30vw, 30vw);
+  }
+}
+
+.booked__takeaway-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.booked__takeaway-item-inner {
+  width: 100%;
+  max-width: min(657px, calc(100vw - 40px));
+  height: fit-content;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.booked__takeaway-item-inner-1 {
+  margin-left: clamp(24px, 3vw, 40px);
+}
+
+.booked__takeaway-item-inner-2 {
+  margin-left: clamp(24px, 3vw, 40px);
+}
+
+.booked__takeaway-item-inner-3 {
+  padding-left: clamp(24px, 3vw, 40px);
+}
+
+.booked__takeaway-item-title {
+  align-self: stretch;
+  color: white;
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: var(--weight-medium);
+  word-wrap: break-word;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.booked__takeaway-item-content {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.booked__takeaway-text {
+  align-self: stretch;
+  color: white;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  word-wrap: break-word;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.booked__takeaway-highlight {
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.35);
+}
+

@@ -1,0 +1,108 @@
+/* =========================
+   POTSALE INCENTIVES
+   ========================= */
+
+.potsale__incentives {
+  position: relative;
+  width: 100%;
+  padding: clamp(40px, 5vw, 80px) 0;
+  background: var(--color-bg);
+}
+
+.potsale__incentives .content-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 80px);
+}
+
+.potsale__incentives-content {
+  display: flex;
+  flex-direction: row;
+  gap: 4%;
+  width: 100%;
+}
+
+.potsale__incentives-left {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+}
+
+.potsale__incentives-middle {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.potsale__incentives-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.potsale__incentives-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.potsale__incentives-middle-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.potsale__incentives-title {
+  margin: 0 0 clamp(16px, 2vw, 24px) 0;
+}
+
+.potsale__incentives-text {
+  margin: 0 0 clamp(16px, 2vw, 24px) 0;
+}
+
+.potsale__incentives-text:last-child {
+  margin-bottom: 0;
+}
+
+.potsale__incentives-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+  text-align: center;
+  margin-top: clamp(40px, 5vw, 80px);
+}
+
+.potsale__incentives-statement {
+  margin: 0;
+}
+
+@media (max-width: 490px) {
+  .potsale__incentives-content {
+    flex-direction: column;
+    gap: clamp(40px, 5vw, 80px);
+  }
+  .potsale__incentives-left {
+    width: 100%;
+    order: 2;
+  }
+  .potsale__incentives-middle {
+    width: 100%;
+    order: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: clamp(12px, 2vw, 20px);
+  }
+  .potsale__incentives-right {
+    width: 100%;
+    order: 1;
+  }
+  .potsale__incentives-image {
+    width: 100%;
+  }
+  .potsale__incentives-middle-image {
+    width: 100%;
+    height: auto;
+  }
+}

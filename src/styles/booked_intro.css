@@ -1,0 +1,118 @@
+/* =========================
+   BOOKED INTRO
+   ========================= */
+
+.booked__intro {
+  width: 100%;
+  position: relative;
+  background: #090909;
+  padding-top: clamp(80px, 10vw, 160px);
+  padding-bottom: clamp(80px, 10vw, 160px);
+  overflow: hidden;
+}
+
+.booked__intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-image: url('/images/booked/intro-lighting.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.booked__intro-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 80px);
+  width: 100%;
+}
+
+.booked__intro-header {
+  width: 100%;
+}
+
+.booked__intro-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(40px, 6vw, 80px);
+  width: 100%;
+}
+
+.booked__intro-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booked__intro-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.booked__intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 48px);
+}
+
+.booked__intro-title {
+  margin: 0;
+}
+
+.booked__intro-details {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 32px);
+}
+
+.booked__intro-detail {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.booked__intro-label {
+  margin: 0;
+  opacity: 1;
+}
+
+.booked__intro-value {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .booked__intro-content {
+    gap: clamp(32px, 5vw, 48px);
+  }
+
+  .booked__intro-main {
+    flex-direction: column;
+    gap: clamp(32px, 5vw, 48px);
+  }
+
+  .booked__intro-image {
+    width: 100%;
+  }
+
+  .booked__intro-text {
+    width: 100%;
+  }
+  
+}
+

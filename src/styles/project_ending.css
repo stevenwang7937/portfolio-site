@@ -1,0 +1,85 @@
+/* =========================
+   PROJECT ENDING
+   ========================= */
+
+.project-ending {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  height: fit-content;
+  background-image: url('/images/ending-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-ending-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(48px, 6vw, 96px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: clamp(40px, 5vw, 80px) 0;
+}
+
+.project-ending-title {
+  text-align: center;
+  margin: 0;
+}
+
+.project-ending-card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-ending-card {
+  width: 100%;
+  height: auto;
+  max-width: 858px;
+}
+
+.project-ending-card-button-link {
+  position: absolute;
+  left: 44.4%;
+  top: 64.7%;
+  width: 35.9%;
+  height: 13.7%;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 36.9px;
+}
+
+.project-ending-bottom-link {
+  text-align: right;
+  margin: 0;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  align-self: flex-end;
+  width: 100%;
+  max-width: 858px;
+}
+
+.project-ending-bottom-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 490px) {
+  .project-ending-card-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+

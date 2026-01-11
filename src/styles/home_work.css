@@ -1,0 +1,354 @@
+/* =========================
+   HOME WORK SECTION
+   ========================= */
+
+   .homework {
+    /* required by you */
+    height: fit-content;
+    padding-bottom: 100px;
+    background: #090909;
+    width: 100%;
+    position: relative;
+  }
+
+ /*@media (max-width: 1200px) {
+    .homework {
+      height: fit-content;
+      padding-bottom: 100px;
+    }
+  }
+  @media (min-width: 2000px) {
+    .homework {
+      height: fit-content;
+      padding-bottom: 100px;
+    }
+  }*/
+  
+  .homework__inner {
+    width: min(1200px, calc(100% - 80px));
+    margin: 0 auto;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Title */
+  .homework__header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 44px;
+  }
+  
+  .homework__title {
+    /* uses token .text-display in TSX */
+    line-height: 1;
+  }
+  
+  .homework__rule {
+    height: 1px;
+    width: min(560px, 100%);
+    background: rgba(255, 255, 255, 0.35);
+  }
+  
+  /* =========================
+     GRID LAYOUT (desktop)
+     ========================= */
+  
+  .homework__grid {
+    /* scale factor: matches your base sizes at >=1440px,
+       scales down smoothly on smaller screens */
+    --scale: min(1, calc(100vw / 1440));
+  
+    display: grid;
+    grid-template-columns: 335px 412px 381px;
+    grid-template-areas:
+      "card1 card2 card3"
+      "card5 card4 card3";
+    column-gap: 56px;
+    row-gap: 44px;
+    align-items: start;
+  }
+  
+  /* Map each card to the grid */
+  .workcard--1 { grid-area: card1; }
+  .workcard--2 { grid-area: card2; }
+  .workcard--3 { grid-area: card3; margin-top: 25vh; } /* nudges Potsale down like your layout */
+  .workcard--4 { grid-area: card4; margin-top: 10vh; }
+  .workcard--5 { grid-area: card5; margin-top: 30vh; }
+  
+  /* =========================
+     CARD
+     ========================= */
+  
+  .workcard {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .workcard__head {
+    display: grid;
+    gap: 6px;
+  }
+  
+  .workcard__subtitle {
+    /* token .text-display already applied in TSX */
+    line-height: 1.1;
+    text-decoration: none;
+    color: var(--color-fg);
+    display: block;
+    cursor: pointer;
+  }
+
+  .workcard__subtitle:hover {
+    opacity: 0.8;
+  }
+
+  .workcard__subtitle h3 {
+    margin: 0;
+    line-height: inherit;
+    color: inherit;
+  }
+  
+  .workcard__meta {
+    /* token .text-body already applied in TSX */
+    opacity: 0.75;
+  }
+  
+  .workcard__desc {
+    /* token .text-body already applied in TSX */
+    opacity: 0.85;
+    max-width: 44ch;
+  }
+  
+  .workcard__underline {
+    height: 1px;
+    width: min(240px, 100%);
+    background: rgba(255, 255, 255, 0.35);
+  }
+  
+  /* =========================
+     THUMB PLACEHOLDERS
+     - each thumb is individually sized
+     - uses your 1440×1024 base dimensions
+     - scales down responsively
+     ========================= */
+  
+  .workcard__thumb {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .workcard__thumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 14px;
+    pointer-events: none;
+  }
+
+  .workcard__thumb:hover::before {
+    opacity: 1;
+  }
+  .workcard__image {
+    object-fit: cover;
+    object-position: 50% 25%;
+  }
+  
+  
+  
+  /* Base sizes at 1440px:
+     1: 335x486
+     2: 412x597
+     3: 335x486
+     4: 381x553
+     5: 287x416
+  */
+  
+  /* Thumb 1 (Tipping) */
+  .workcard__thumb_1 {
+    width: calc(335px * var(--scale));
+    aspect-ratio: 335 / 486;
+    background-image: url('/images/home-work/home-work-tipping.png');
+    background-size: cover;
+    background-position: 50% 25%;
+  }
+  
+  /* Thumb 2 (Booked) */
+  .workcard__thumb_2 {
+    width: calc(412px * var(--scale));
+    aspect-ratio: 412 / 597;
+    background-image: url('/images/home-work/home-work-booked.png');
+    background-size: cover;
+    background-position: 50% 25%;
+  }
+  
+  /* Thumb 3 (Potsale) */
+  .workcard__thumb_3 {
+    width: calc(335px * var(--scale));
+    aspect-ratio: 335 / 486;
+    background-image: url('/images/home-work/home-work-agent.png');
+    background-size: cover;
+    background-position: 50% 25%;
+  }
+  
+  /* Thumb 4 (Opentext) */
+  .workcard__thumb_4 {
+    width: calc(381px * var(--scale));
+    aspect-ratio: 381 / 553;
+    background-image: url('/images/home-work/home-work-opentext.png');
+    background-size: cover;
+    background-position: 50% 25%;
+  }
+  
+  /* Thumb 5 (AI Agent) */
+  .workcard__thumb_5 {
+    width: calc(287px * var(--scale));
+    aspect-ratio: 287 / 416;
+    background-image: url('/images/home-work/home-work-potsale.png');
+    background-size: cover;
+    background-position: 50% 25%;
+  }
+  
+  /* =========================
+     RESPONSIVE
+     ========================= */
+  
+  /* Switch to 2 columns before overflow occurs */
+  @media (max-width: 1350px) {
+    .homework__inner {
+      width: min(1200px, calc(100% - 80px));
+    }
+
+    .homework__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "card1 card2"
+        "card3 card4"
+        "card5 card4";
+      column-gap: 32px;
+      row-gap: 36px;
+    }
+
+    .workcard--3 { margin-top: 0; }
+    .workcard--4 { margin-top: 0; }
+    .workcard--5 { margin-top: 0; }
+
+    /* ensure thumbs don't get too large on medium screens */
+    .workcard__thumb_1,
+    .workcard__thumb_2,
+    .workcard__thumb_3,
+    .workcard__thumb_4,
+    .workcard__thumb_5 {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .homework__inner {
+      width: min(920px, calc(100% - 48px));
+    }
+  
+    .homework__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "card1 card2"
+        "card3 card4"
+        "card5 card4";
+      column-gap: 32px;
+      row-gap: 36px;
+    }
+  
+    .workcard--3 { margin-top: 0; }
+    .workcard--4 { margin-top: 0; }
+    .workcard--5 { margin-top: 0; }
+  
+    /* ensure thumbs don’t get too large on medium screens */
+    .workcard__thumb_1,
+    .workcard__thumb_2,
+    .workcard__thumb_3,
+    .workcard__thumb_4,
+    .workcard__thumb_5 {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .homework__inner {
+      width: calc(100% - 32px);
+      padding-top: 48px;
+    }
+  
+    .homework__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5";
+      row-gap: 34px;
+    }
+  
+    .workcard__desc {
+      max-width: 60ch;
+    }
+  
+    /* On small screens, make thumbs fit the container width while keeping aspect ratio */
+    .workcard__thumb_1,
+    .workcard__thumb_2,
+    .workcard__thumb_3,
+    .workcard__thumb_4,
+    .workcard__thumb_5 {
+      width: 100%;
+      max-width: 520px;
+      justify-self: start;
+    }
+  }
+
+  /* Mobile: Reorder cards - Booked, AI Agent, Tipping App, Opentext, Potsale */
+  @media (max-width: 490px) {
+    .homework__grid {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    /* Order: 1. Booked (workcard--2), 2. AI Agent (workcard--3), 3. Tipping App (workcard--1), 4. Opentext (workcard--4), 5. Potsale (workcard--5) */
+    .workcard--2 {
+      order: 1;
+    }
+
+    .workcard--3 {
+      order: 2;
+    }
+
+    .workcard--1 {
+      order: 3;
+    }
+
+    .workcard--4 {
+      order: 4;
+    }
+
+    .workcard--5 {
+      order: 5;
+    }
+  }
+  

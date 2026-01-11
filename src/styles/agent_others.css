@@ -1,0 +1,224 @@
+/* =========================
+   AGENT OTHERS
+   ========================= */
+
+.agent__others {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-color: #030303;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent__others .content-container {
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(40px, 5vw, 80px);
+  padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.agent__others-remark {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 15vh;
+}
+
+.agent__others-remark-label {
+  margin: 0;
+}
+
+.agent__others-remark-text {
+  margin: 0;
+}
+
+.agent__others-header {
+  width: 100%;
+}
+
+.agent__others-content {
+  padding-top: 8%;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  width: 100%;
+}
+
+.agent__others-content-1,
+.agent__others-content-2,
+.agent__others-content-3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.agent__others-content-text {
+  font-size: var(--text-heading-md);
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.agent__others-content-1-wrapper,
+.agent__others-content-2-wrapper,
+.agent__others-content-3-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1.588;
+  background-image: url('/images/agent/others-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+/* Wrapper 1 specific elements */
+.agent__others-content-1-wrapper {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.agent__others-content-1-icon-4 {
+  margin-top: 5%;
+  margin-right: 25%;
+  height: 15%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(-12deg);
+}
+
+.agent__others-content-1-icon-3 {
+  margin-bottom: 4%;
+  margin-left: 45%;
+  height: 10%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(-8deg);
+}
+
+.agent__others-content-1-icon-1 {
+  
+  margin-right: 20%;
+  height: 15%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(15deg);
+}
+
+.agent__others-content-1-text-1 {
+  width: 45%;
+  margin: 0 0 0 20%;
+  padding: 0;
+  text-align: center;
+}
+
+.agent__others-content-1-text-2 {
+  width: 45%;
+  margin: 0 30% 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Wrapper 2 specific elements */
+.agent__others-content-2-wrapper {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.agent__others-content-2-icon-6 {
+  margin-top: 10%;
+  margin-left: 25%;
+  height: 15%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(12deg);
+}
+
+.agent__others-content-2-icon-2 {
+  margin-bottom: 15%;
+  margin-right: 20%;
+  height: 15%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(-8deg);
+}
+
+.agent__others-content-2-text-1 {
+  width: 45%;
+  margin: 0 0 0 15%;
+  padding: 0;
+  text-align: center;
+}
+
+.agent__others-content-2-text-2 {
+  width: 45%;
+  margin: 0 25% 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Wrapper 3 specific elements */
+.agent__others-content-3-wrapper {
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.agent__others-content-3-icon-7{
+  margin-top: 20%;
+  margin-left: 20%;
+  height: 7%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(15deg);
+}
+
+.agent__others-content-3-icon-5 {
+  margin-right: 20%;
+  margin-bottom: 20%;
+  height: 15%;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+  transform: rotate(-15deg);
+}
+
+.agent__others-content-3-text-1{
+  margin-right: 35%;
+  width: 45%;
+  padding: 0;
+  text-align: center;
+}
+
+
+.agent__others-content-3-text-2 {
+  width: 45%;
+  margin: 0 0 0 25%;
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 490px) {
+  .agent__others-content{
+    flex-direction: column;
+    gap: 10vh;
+  }
+}

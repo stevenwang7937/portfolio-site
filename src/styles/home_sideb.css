@@ -1,0 +1,387 @@
+/* =========================
+   HOME SIDE B SECTION
+   ========================= */
+
+.home_sideb {
+  width: 100%;
+  background: #090909;
+  padding: clamp(64px, 8vw, 120px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.home_sideb__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(36px, 5vw, 60px);
+  position: relative;
+  z-index: 2;
+}
+
+/* Header with rules */
+.home_sideb__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.home_sideb__rule {
+  height: 1px;
+  width: min(560px, 100%);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.home_sideb__question-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-xs);
+}
+
+.home_sideb__question {
+  text-align: center;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Title with icons */
+.home_sideb__title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 24px);
+  width: fit-content;
+  height: fit-content;
+}
+
+.home_sideb__icon {
+  width: clamp(32px, 3vw, 48px);
+  height: clamp(32px, 3vw, 48px);
+  flex-shrink: 0;
+}
+
+.home_sideb__title {
+  text-align: center;
+  margin: 0;
+}
+
+/* List */
+.home_sideb__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 3vw, 32px);
+  position: relative;
+  z-index: 2;
+}
+
+.home_sideb__item-bar {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+}
+
+.home_sideb__item {
+  text-align: center;
+  margin: 0;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+/* When any item-bar is hovered, dim all items */
+.home_sideb__list:hover .home_sideb__item {
+  opacity: 0.4;
+}
+
+/* But keep the hovered item at full opacity */
+.home_sideb__item-bar:hover .home_sideb__item {
+  opacity: 1;
+}
+
+.home_sideb__coming-soon {
+  opacity: 0.6;
+}
+
+/* =========================
+   IMAGE GALLERY
+   ========================= */
+
+.home_sideb__gallery {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(20px, 4vw, 80px);
+  max-width: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+/* Hide all galleries by default */
+.home_sideb__gallery {
+  opacity: 0;
+}
+
+/* Show specific gallery based on hovered item using :has() selector */
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="blog"]:hover) ~ .home_sideb__gallery--blog {
+  opacity: 1;
+}
+
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="tarot"]:hover) ~ .home_sideb__gallery--tarot {
+  opacity: 1;
+}
+
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="pottery"]:hover) ~ .home_sideb__gallery--pottery {
+  opacity: 1;
+}
+
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="illos"]:hover) ~ .home_sideb__gallery--illos {
+  opacity: 1;
+}
+
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="freelance"]:hover) ~ .home_sideb__gallery--freelance {
+  opacity: 1;
+}
+
+/* Hide all galleries when "none" is hovered */
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="none"]:hover) ~ .home_sideb__gallery {
+  opacity: 0;
+}
+
+.home_sideb__gallery-image {
+  flex: 0 0 auto;
+  width: clamp(180px, 18vw, 280px);
+  height: clamp(240px, 24vw, 380px);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition-delay: 0s;
+}
+
+/* Position images: left, center, right */
+.home_sideb__gallery-image:nth-child(1) {
+  align-self: flex-start;
+  margin-top: 5%;
+}
+
+.home_sideb__gallery-image:nth-child(2) {
+  align-self: center;
+}
+
+.home_sideb__gallery-image:nth-child(3) {
+  align-self: flex-end;
+  margin-top: 10%;
+}
+
+/* Stagger the animation for each image when gallery is visible */
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="blog"]:hover) ~ .home_sideb__gallery--blog .home_sideb__gallery-image:nth-child(1),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="tarot"]:hover) ~ .home_sideb__gallery--tarot .home_sideb__gallery-image:nth-child(1),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="pottery"]:hover) ~ .home_sideb__gallery--pottery .home_sideb__gallery-image:nth-child(1),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="illos"]:hover) ~ .home_sideb__gallery--illos .home_sideb__gallery-image:nth-child(1),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="freelance"]:hover) ~ .home_sideb__gallery--freelance .home_sideb__gallery-image:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: 0.1s;
+}
+
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="blog"]:hover) ~ .home_sideb__gallery--blog .home_sideb__gallery-image:nth-child(2),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="tarot"]:hover) ~ .home_sideb__gallery--tarot .home_sideb__gallery-image:nth-child(2),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="pottery"]:hover) ~ .home_sideb__gallery--pottery .home_sideb__gallery-image:nth-child(2),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="illos"]:hover) ~ .home_sideb__gallery--illos .home_sideb__gallery-image:nth-child(2),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="freelance"]:hover) ~ .home_sideb__gallery--freelance .home_sideb__gallery-image:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: 0.2s;
+}
+
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="blog"]:hover) ~ .home_sideb__gallery--blog .home_sideb__gallery-image:nth-child(3),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="tarot"]:hover) ~ .home_sideb__gallery--tarot .home_sideb__gallery-image:nth-child(3),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="pottery"]:hover) ~ .home_sideb__gallery--pottery .home_sideb__gallery-image:nth-child(3),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="illos"]:hover) ~ .home_sideb__gallery--illos .home_sideb__gallery-image:nth-child(3),
+.home_sideb__inner:has(.home_sideb__item-bar[data-gallery="freelance"]:hover) ~ .home_sideb__gallery--freelance .home_sideb__gallery-image:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: 0.3s;
+}
+
+.home_sideb__gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+  .home_sideb__question-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .home_sideb__title-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .home_sideb__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Hide gallery on small screens */
+  .home_sideb__gallery {
+    display: none;
+  }
+}
+
+/* Adjust gallery for medium screens (721px - 1024px) */
+@media (max-width: 1024px) and (min-width: 721px) {
+  .home_sideb__gallery {
+    padding: 0 20px;
+  }
+
+  .home_sideb__gallery-image {
+    width: clamp(120px, 15vw, 200px);
+    height: clamp(160px, 20vw, 270px);
+  }
+}
+
+/* Adjust gallery for screens smaller than 1200px (1025px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1025px) {
+  .home_sideb__gallery {
+    padding: 0 30px;
+  }
+
+  .home_sideb__gallery-image {
+    width: clamp(220px, 20vw, 320px);
+    height: clamp(290px, 27vw, 430px);
+  }
+}
+
+/* Large screens - 2000px and above */
+@media (min-width: 2000px) {
+  .home_sideb__gallery {
+    padding: 0 clamp(120px, 12vw, 200px);
+  }
+
+  .home_sideb__gallery-image {
+    width: clamp(350px, 22vw, 420px);
+    height: clamp(470px, 29vw, 560px);
+  }
+}
+
+/* Hide mobile galleries on desktop */
+.home_sideb__gallery-mobile {
+  display: none;
+}
+
+/* Mobile styles - below 490px */
+@media (max-width: 490px) {
+  /* Change item text to text-body token */
+  .home_sideb__item {
+    font-size: var(--text-body);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-body);
+  }
+
+  /* Disable all hover animations */
+  .home_sideb__item {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .home_sideb__list:hover .home_sideb__item {
+    opacity: 1 !important;
+  }
+
+  .home_sideb__item-bar:hover .home_sideb__item {
+    opacity: 1 !important;
+  }
+
+  /* Hide all absolute positioned galleries on mobile */
+  .home_sideb__gallery {
+    display: none !important;
+    opacity: 0 !important;
+  }
+
+  /* Restructure list for mobile */
+  .home_sideb__list {
+    width: 100%;
+    align-items: stretch;
+    gap: clamp(32px, 8vw, 48px);
+  }
+
+  .home_sideb__list > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .home_sideb__item-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Show mobile galleries in 2x2 grid */
+  .home_sideb__gallery-mobile {
+    display: grid !important;
+    grid-template-columns: 48% 4% 48%;
+    grid-template-rows: 48% 4% 48%;
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .home_sideb__gallery-mobile .home_sideb__gallery-image {
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    margin: 0 !important;
+    align-self: stretch !important;
+  }
+
+  /* L-shape layout: image 1 top-left, image 2 top-right, image 3 bottom-left */
+  .home_sideb__gallery-mobile .home_sideb__gallery-image:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .home_sideb__gallery-mobile .home_sideb__gallery-image:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .home_sideb__gallery-mobile .home_sideb__gallery-image:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .home_sideb__gallery-mobile .home_sideb__gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+

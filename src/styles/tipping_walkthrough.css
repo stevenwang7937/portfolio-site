@@ -1,0 +1,257 @@
+/* =========================
+   TIPPING WALKTHROUGH
+   ========================= */
+
+.tipping__walkthrough {
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background-color: var(--color-bg);
+}
+
+.tipping__walkthrough .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(40px, 5vw, 60px);
+}
+
+.tipping__walkthrough-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tipping__walkthrough-grid {
+  width: 80%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0%;
+  position: relative;
+}
+
+.tipping__walkthrough-grid > .tipping__block {
+  width: 100%;
+}
+
+.tipping__walkthrough-zoom {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tipping__walkthrough-zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tipping__walkthrough-chain {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Vertical chains - connecting rows */
+.tipping__walkthrough-chain.vertical-1 {
+  /* From block 1 (row 1, col 1) to block 4 (row 2, col 1) */
+  top: 33.33%;
+  left: 16.67%;
+  transform: translate(-50%, -50%);
+  width: 3%;
+  height: 33.33%;
+  object-fit: contain;
+}
+
+.tipping__walkthrough-chain.vertical-2 {
+  /* From block 4 (row 2, col 1) to zoom (row 3, col 1) */
+  top: 66.67%;
+  left: 16.67%;
+  transform: translate(-50%, -50%);
+  width: 3%;
+  height: 33.33%;
+  object-fit: contain;
+}
+
+.tipping__walkthrough-chain.vertical-3 {
+  /* From block 5 (row 2, col 2) to block 8 (row 3, col 2) */
+  top: 66.67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3%;
+  height: 33.33%;
+  object-fit: contain;
+}
+
+.tipping__walkthrough-chain.vertical-4 {
+  /* From block 6 (row 2, col 3) to block 9 (row 3, col 3) */
+  top: 66.67%;
+  left: 83.33%;
+  transform: translate(-50%, -50%);
+  width: 3%;
+  height: 33.33%;
+  object-fit: contain;
+}
+
+/* Horizontal chains - connecting columns */
+.tipping__walkthrough-chain.horizontal-1 {
+  /* Between block 1 and block 2 (row 1) */
+  top: 16.67%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  width: 33.33%;
+  height: 3%;
+  object-fit: contain;
+}
+
+.tipping__walkthrough-chain.horizontal-2 {
+  /* Between block 2 and block 3 (row 1) */
+  top: 16.67%;
+  left: 66.67%;
+  transform: translate(-50%, -50%);
+  width: 33.33%;
+  height: 3%;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .tipping__walkthrough-grid {
+    
+      width: 100%;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .tipping__walkthrough-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 490px) {
+  .tipping__walkthrough-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 4vw, 40px);
+  }
+  
+  .tipping__walkthrough-grid > .tipping__block {
+    width: 90%;
+  }
+  
+  .tipping__walkthrough-zoom {
+    width: 90%;
+  }
+  
+  /* Reorder: 1,4,2,3,7,5,8,6,9 */
+  /* Block 1 (1st child) -> order 1 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(1) {
+    order: 1;
+  }
+  /* Block 4 (4th child) -> order 2 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(4) {
+    order: 2;
+  }
+  /* Block 2 (2nd child) -> order 3 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(2) {
+    order: 3;
+  }
+  /* Block 3 (3rd child) -> order 4 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(3) {
+    order: 4;
+  }
+  /* Zoom (7th child) -> order 5 */
+  .tipping__walkthrough-grid > .tipping__walkthrough-zoom {
+    order: 5;
+  }
+  /* Block 5 (5th child) -> order 6 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(5) {
+    order: 6;
+  }
+  /* Block 8 (9th child) -> order 7 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(9) {
+    order: 7;
+  }
+  /* Block 6 (6th child) -> order 8 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(6) {
+    order: 8;
+  }
+  /* Block 7 (8th child) -> order 9 */
+  .tipping__walkthrough-grid > .tipping__block:nth-child(8) {
+    order: 9;
+  }
+  
+  /* Show and position vertical chains for mobile */
+  .tipping__walkthrough-chain {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Chain 1: Connect order 1 (Block 1) and order 2 (Block 4) */
+  /* Positioned between first and second item */
+  .tipping__walkthrough-chain.vertical-1 {
+    display: block;
+    top: 10.9%;
+    width: 50vw;
+    left: 50%;
+    height: 12vh;
+    transform: translateX(-50%) translateY(-50%);
+    
+  }
+  
+  /* Chain 2: Connect order 3 (Block 2) and order 4 (Block 3) */
+  /* Positioned between third and fourth item */
+  .tipping__walkthrough-chain.vertical-2 {
+    display: block;
+    top: 33.2%;
+    width: 50vw;
+    left: 50%;
+    height: 12vh;
+    transform: translateX(-50%) translateY(-50%);
+    
+  }
+  
+  /* Chain 3: Connect order 6 (Block 5) and order 7 (Block 8) */
+  /* Positioned between sixth and seventh item */
+  .tipping__walkthrough-chain.vertical-3 {
+    display: block;
+    top: 66.8%;
+    
+    transform: translateX(-50%) translateY(-50%);
+    width: 50vw;
+    left: 50%;
+    height: 12vh;
+  }
+  
+  /* Chain 4: Connect order 8 (Block 6) and order 9 (Block 7) */
+  /* Positioned between eighth and ninth item */
+  .tipping__walkthrough-chain.vertical-4 {
+    display: block;
+    top: 89.1%;
+    width: 50vw;
+    left: 50%;
+    height: 12vh;
+    transform: translateX(-50%) translateY(-50%);
+    
+    }
+  
+  /* Hide horizontal chains in mobile */
+  .tipping__walkthrough-chain.horizontal-2 {
+    display: none;
+  }
+}
+

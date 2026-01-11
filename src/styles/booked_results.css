@@ -1,0 +1,101 @@
+/* =========================
+   BOOKED RESULTS
+   ========================= */
+
+.booked__results {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  height: fit-content;
+  padding-top: clamp(80px, 5vw, 160px);
+  padding-bottom: clamp(80px, 5vw, 160px);
+}
+
+.booked__results-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 6vw, 96px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.booked__results-header {
+  width: 100%;
+}
+
+.booked__results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.booked__results-block {
+  background-color: #20262B;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: clamp(16px, 2vw, 24px);
+  padding-top: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 28px);
+  box-sizing: border-box;
+}
+
+.booked__results-block--empty {
+  background-color: var(--color-bg);
+}
+
+.booked__results-block-title {
+  margin: 0;
+}
+
+.booked__results-block-text {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .booked__results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+
+
+@media (min-width: 1800px) {
+  .booked__results-block {
+    
+    gap: clamp(32px, 4vw, 48px);
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .booked__results {
+    padding-top: 0vh;
+    padding-bottom: 5vh;
+  }
+  .booked__results-content {
+    gap: 10vh;
+  }
+  .booked__results-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .booked__results-block--empty {
+    background-color: var(--color-bg);
+    height: 10vh;
+  }
+  .booked__results-block-text,
+  .booked__results-block-title {
+    width: 90%;
+    align-self: center;
+  }
+}

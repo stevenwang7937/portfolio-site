@@ -1,0 +1,69 @@
+/* =========================
+   PROJECT TAKEAWAY
+   ========================= */
+
+.project-takeaway {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  height: fit-content;
+}
+
+.project-takeaway-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.project-takeaway-header {
+  width: 100%;
+}
+
+.project-takeaway-content-box {
+  width: 100%;
+  height: fit-content;
+  background-image: url('/images/project-takeaway-background.png');
+  background-size: 75% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.project-takeaway-text {
+  text-align: center;
+  width: 35%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  line-height: 2;
+}
+
+/* Tipping page specific styling */
+.tipping .project-takeaway {
+  background-color: var(--color-bg);
+}
+
+/* Potsale page specific styling */
+.potsale .project-takeaway {
+  background-color: var(--color-bg);
+}
+
+@media screen and (max-width: 490px) {
+  .project-takeaway-text {
+    width: 80%;
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+    font-size: var(--text-description);
+  }
+  .project-takeaway-content-box {
+    min-height: 70vh;
+  }
+}

@@ -1,0 +1,150 @@
+/* =========================
+   BOOKED SWOT CARD
+   ========================= */
+
+.booked-swot-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 550px;
+  max-height: 430px;
+  background: #1E1E1E;
+  border-radius: 17.4px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 0.825px solid transparent;
+}
+
+/* Radial stroke border effect */
+.booked-swot-card::before {
+  content: '';
+  position: absolute;
+  inset: -0.825px;
+  border-radius: 17.4px;
+  padding: 0.825px;
+  background: 
+    radial-gradient(circle at var(--gradient-x, 0%) var(--gradient-y, 0%), 
+      rgba(151, 173, 216, 0.8) 0%,
+      rgba(144, 163, 213, 0) 20%,
+      transparent 35%),
+    radial-gradient(circle at var(--gradient-x, 0%) var(--gradient-y, 0%), 
+      rgba(242, 245, 255, 0.8) 0%,
+      rgba(242, 245, 255, 0.6) 15%,
+      rgba(242, 245, 255, 0) 35%),
+    linear-gradient(135deg, 
+      rgba(244, 244, 250, 0.1) 0%,
+      rgba(240, 243, 250, 0.1) 4%,
+      rgba(26, 41, 77, 0.1) 95%,
+      rgba(6, 7, 10, 1) 96%,
+      rgba(5, 7, 10, 1) 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Title positioning */
+.booked-swot-card__title {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  font-weight: var(--weight-medium);
+  font-style: normal;
+  line-height: var(--line-tight);
+  color: var(--color-fg);
+  text-shadow: var(--text-shadow-engraved);
+  z-index: 2;
+  margin: 0;
+}
+
+/* Direction-based positioning */
+.booked-swot-card--top-left .booked-swot-card__title {
+  top: 24px;
+  left: 32px;
+}
+
+.booked-swot-card--top-right .booked-swot-card__title {
+  top: 24px;
+  right: 32px;
+  text-align: right;
+}
+
+.booked-swot-card--bottom-left .booked-swot-card__title {
+  bottom: 24px;
+  left: 32px;
+}
+
+.booked-swot-card--bottom-right .booked-swot-card__title {
+bottom: 24px;
+  right: 32px;
+  text-align: right;
+}
+
+/* Gradient positioning based on direction */
+.booked-swot-card--top-left {
+  --gradient-x: 0%;
+  --gradient-y: 0%;
+}
+
+.booked-swot-card--top-right {
+  --gradient-x: 100%;
+  --gradient-y: 0%;
+}
+
+.booked-swot-card--bottom-left {
+  --gradient-x: 0%;
+  --gradient-y: 100%;
+}
+
+.booked-swot-card--bottom-right {
+  --gradient-x: 100%;
+  --gradient-y: 100%;
+}
+
+/* Content styling */
+.booked-swot-card__content {
+  text-align: center;
+  max-width: 80%;
+  z-index: 1;
+  margin: 0;
+}
+
+@media screen and (max-width: 490px) {
+  .booked-swot-card {
+    max-width: 100%;
+    max-height: none;
+    height: fit-content;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .booked-swot-card--top-left .booked-swot-card__title,
+  .booked-swot-card--top-right .booked-swot-card__title,
+  .booked-swot-card--bottom-left .booked-swot-card__title,
+  .booked-swot-card--bottom-right .booked-swot-card__title {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+  
+  .booked-swot-card__content {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+

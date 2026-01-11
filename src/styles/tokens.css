@@ -1,0 +1,253 @@
+@layer base{:root {
+    /* ==================================================
+       COLORS
+       ================================================== */
+  
+    --color-bg: #090909;
+    --color-fg: #ffffff;
+    --color-muted: #9a9a9a;
+    --color-border: rgba(255, 255, 255, 0.12);
+    --color-accent: #c9b37e;
+  
+    /* ==================================================
+       TYPOGRAPHY
+       ================================================== */
+  
+    /* Font families */
+    --font-display: "Noe Display", serif;
+    --font-body: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  
+    /* Font sizes */
+    --text-display-xl: clamp(
+    4rem,        /* 64px — good for 1024 */
+    5vw,         /* fluid scaling */
+    8rem         /* 128px — good for 4K */
+  );
+  --text-display-lg: clamp(
+    2.5rem,        /* 48px — good for 1024 */
+    3.5vw,         /* fluid scaling */
+    5rem         /* 96px — good for 4K */
+  );
+  --text-heading-lg: clamp(
+    2rem,        /* 32px — good for 1024 */
+    1.75vw,         /* fluid scaling */
+    3rem         /* 48px — good for 4K */
+  );
+  --text-heading-md: clamp(
+    1.5rem,        /* 24px — good for 1024 */
+    1.5vw,         /* fluid scaling */
+    2.5rem         /* 40px — good for 4K */
+  );
+    --text-body: clamp(
+    1rem,        /* 16px — good for 1024 */
+    1.125vw,         /* fluid scaling */
+    1.375rem         /* 22px — good for 4K */
+  );
+  --text-description: clamp(
+    0.75rem,        /* 14px — good for 1024 */
+    1vw,         /* fluid scaling */
+    1rem         /* 18px — good for 4K */
+  );
+    /* Font weights */
+    --weight-text:300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+  
+    /* Line heights */
+    --line-tight: 1;
+    --line-body: 1.6;
+  
+    /* ==================================================
+       SPACING
+       ================================================== */
+  
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+  
+    /* ==================================================
+       RADIUS
+       ================================================== */
+  
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+  
+    /* ==================================================
+       SHADOWS
+       ================================================== */
+  
+    /* Engraved / glow text shadow */
+    --text-shadow-engraved:
+      2px 2px 4px rgba(255, 255, 255, 0.35),
+     -2px -2px 4px rgba(255, 255, 255, 0.35);
+  
+    /* Surface shadows */
+    --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-raised: 0 8px 24px rgba(0, 0, 0, 0.35);
+  
+    /* ==================================================
+       LAYOUT
+       ================================================== */
+  
+    --container-max: 1200px;
+    --container-padding: 5vw;
+      /* nav text */
+  --text-nav-item-size: clamp(
+    0.95rem,   /* ~15px on small laptops */
+    1.1vw,     /* scales with viewport */
+    1.5rem);
+  --text-nav-item-weight: 300;
+  --text-nav-item-weight-hover: 400;
+  --text-nav-item-letter: 0em;
+
+  /* nav colors */
+  --nav-text: rgba(255,255,255,0.88);
+  --nav-text-hover: rgba(255,255,255,1);
+
+  /* hover background */
+  --nav-hover-bg: rgba(255,255,255,0.14);
+
+  /* spacing */
+  --nav-item-pad-y: 10px;
+  --nav-item-pad-x: 14px;
+  }
+}
+
+@layer components {
+   .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-padding);
+    }
+  
+   .content-container {
+    display: flex;
+    align-self: center;
+    width: clamp(860px, 84vw, 2016px);
+    margin-inline: auto;
+    }
+    @media (max-width: 490px) {
+      .content-container {
+        width: 84%;
+      }
+    }
+
+  
+    .section {
+      padding-block: var(--space-2xl);
+    }
+   .text-display {
+     font-family: var(--font-display);
+     font-size: var(--text-display-xl);
+     font-weight: var(--weight-medium);
+     font-style: italic;
+     line-height: var(--line-tight);
+     color: var(--color-fg);
+     text-shadow: var(--text-shadow-engraved);
+   }
+   .text-section-header {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg);
+    font-weight: var(--weight-medium);
+    font-style: italic;
+    line-height: var(--line-tight);
+    color: var(--color-fg);
+    text-shadow: var(--text-shadow-engraved);
+  }
+   .text-section-subheader {
+    font-family: var(--font-display);
+     font-size: var(--text-heading-lg);
+     font-weight: var(--weight-medium);
+     font-style: normal;
+     line-height: var(--line-tight);
+     color: var(--color-fg);
+     text-shadow: var(--text-shadow-engraved);
+   }
+
+ 
+   .text-subheading {
+     font-family: var(--font-body);
+     font-size: var(--text-heading-md);
+     font-weight: var(--weight-medium);
+     line-height: var(--line-body);
+     color: var(--color-fg);
+     text-shadow: var(--text-shadow-engraved);
+   }
+ 
+   .text-body {
+     font-family: var(--font-body);
+     font-size: var(--text-body);
+     font-weight: var(--weight-text);
+     line-height: var(--line-body);
+     color: var(--color-fg);
+     text-shadow: var(--text-shadow-engraved);
+   }
+
+   .text-description {
+    font-family: var(--font-body);
+    font-size: var(--text-description);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-body);
+    color: var(--color-fg);
+    text-shadow: var(--text-shadow-engraved);
+  }
+
+   .text-body-no-shadow {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-body);
+    color: var(--color-fg);
+    text-shadow: none;
+  }
+  .text-body-black-no-shadow {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-body);
+    color: var(--color-bg);
+    text-shadow: none;
+  }
+   .text-nav-item {
+    font-family: var(--font-body);
+    font-size: var(--text-nav-item-size);
+    font-weight: var(--text-nav-item-weight);
+    letter-spacing: var(--text-nav-item-letter);
+    color: var(--nav-text);
+  }
+  .text-nav-item--active {
+    color: var(--nav-text-hover);
+    font-weight: var(--text-nav-item-weight-hover);
+  }
+  
+  .section-header-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .section-header-title__top {
+    margin: 0;
+  }
+
+  .section-header-title__bottom {
+    margin: 0;
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .section-header__description {
+    margin: 0;
+  }
+   
+ }
+ 

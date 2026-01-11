@@ -1,0 +1,11 @@
+/* =========================
+   BOOKED PAGE
+   ========================= */
+
+.booked {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: #090909;
+}
+

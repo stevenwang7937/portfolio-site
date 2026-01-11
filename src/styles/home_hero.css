@@ -1,0 +1,67 @@
+/* Hero Section Styles */
+
+.home_hero {
+  position: relative;      /* required so nav--floating can be absolute inside */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  overflow: hidden;
+  
+  /* Background image - using correct filename */
+  background-image: url("/images/home_hero_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Note: background color removed to allow background-image to display */
+}
+
+.home_hero__content {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+  gap: clamp(24px,1vh,40px);
+  max-width: 1600px; 
+  padding-left: clamp(24px, 12vw, 320px);
+  /* padding-right: clamp(24px, 12vw, 240px); */
+  height: fit-content;
+}
+
+.home_hero__content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.home_hero__kicker {
+  opacity: 0.9;
+  margin: 0 0 0px;
+  height: fit-content;
+  font-weight: 400;
+}
+
+.home_hero__title {
+  height: fit-content;
+}
+
+.home_hero__subtitle {  
+  margin-top: 18px;
+  max-width: clamp(560px, 40vw, 800px);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+.home_hero__subtitle{
+  font-size: 20px;
+  max-width: 80%;
+}
+}

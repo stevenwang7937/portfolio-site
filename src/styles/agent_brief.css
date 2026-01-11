@@ -1,0 +1,102 @@
+/* =========================
+   AGENT BRIEF
+   ========================= */
+
+.agent__brief {
+  position: relative;
+  width: 100vw;
+  background-color: var(--color-bg);
+  background-image: url('/images/agent/brief-background.png');
+  background-size: 100vw auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  height: fit-content; /* Fallback, will be adjusted by background image */
+}
+
+/* Create a spacer to match background image aspect ratio */
+.agent__brief::before {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-bottom: 50%; /* Adjust this value to match your image's aspect ratio (height/width * 100) */
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.agent__brief-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 80px);
+  min-height: 50vw; /* Match the aspect ratio - adjust based on image */
+  padding-bottom: 10%;
+}
+
+.agent__brief-header {
+  width: 100%;
+  padding-top: clamp(40px, 5vw, 80px);
+}
+
+.agent__brief-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8vh;
+  padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.agent__brief-text {
+  width: 40%;
+  text-align: center;
+  margin: 0;
+}
+
+.agent__brief-icons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.agent__brief-icon {
+  width: auto;
+  height: 10vh;
+  object-fit: contain;
+}
+@media (max-width: 1200px) {
+  .agent__brief-icon {
+    width: auto;
+    height: 7vh;
+    object-fit: contain;
+  }}
+
+@media (max-width: 490px) {
+  .agent__brief {
+    height: fit-content;
+    background-image:hidden;
+    background-size: 0;
+  }
+  .agent__brief-text{
+    width: 100%;
+    
+  }
+  .agent__brief-content {
+    padding-bottom: 10%;
+  }
+  
+}

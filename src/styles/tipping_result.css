@@ -1,0 +1,40 @@
+/* =========================
+   TIPPING RESULT
+   ========================= */
+
+.tipping__result {
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background-color: var(--color-bg);
+}
+
+.tipping__result .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 80px);
+}
+
+.tipping__result-content {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(2, auto);
+  gap: clamp(20px, 3vw, 40px);
+  padding: 0 clamp(20px, 5vw, 60px);
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media (max-width: 490px) {
+  .tipping__result-content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 40px);
+    padding: 0 clamp(20px, 5vw, 60px);
+  }
+}
+

@@ -1,0 +1,66 @@
+/* =========================
+   PROJECT INTRO CARDS
+   ========================= */
+
+.project-intro-cards-wrapper {
+  width: 100%;
+  
+  height: fit-content;
+  background-color: #090909;
+}
+
+.project-intro-cards {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 4%;
+  align-items: stretch;
+}
+
+.project-intro-cards-item {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+}
+
+@media (max-width: 1100px) {
+  .project-intro-cards-wrapper {
+    overflow-x: hidden;
+  }
+  
+  .project-intro-cards {
+    gap: 2%;
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile: 2x2 grid layout */
+@media (max-width: 490px) {
+  .project-intro-cards-wrapper {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .project-intro-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px 16px;
+  }
+
+  .project-intro-cards-item {
+    padding-top: -30%;
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* Very small mobile: 1 column, 4 rows */
+@media (max-width: 400px) {
+  .project-intro-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 0px;
+  }
+}
+

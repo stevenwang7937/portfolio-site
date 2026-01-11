@@ -1,0 +1,39 @@
+/* =========================
+   OPENTEXT HERO
+   ========================= */
+
+.opentext__hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/images/opentext/hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opentext__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+
+.opentext__title {
+  margin: 0 0 clamp(16px, 2vw, 24px) 0;
+}
+
+.opentext__meta {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+  margin: 0;
+}
+
+.opentext__meta-item {
+  margin: 0;
+}
+

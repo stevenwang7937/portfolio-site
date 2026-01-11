@@ -1,0 +1,87 @@
+/* =========================
+   BOOKED CHAT
+   ========================= */
+
+.booked-chat {
+  position: relative;
+  background-color: #575B66;
+  padding: clamp(8px, 0.7vw, 10px) clamp(12px, 1.1vw, 16px);
+  height: fit-content;
+  max-width: clamp(280px, 25vw, 400px);
+  border-radius: 8px;
+}
+
+.booked-chat__icon-container {
+  position: absolute;
+  top: 0px;
+  left: -44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 1.1vw, 16px);
+  background-color: #3B3C3D;
+  border-radius: 49px;
+  z-index: 1;
+}
+
+.booked-chat__icon {
+  width: clamp(20px, 1.7vw, 24px);
+  height: clamp(20px, 1.7vw, 24px);
+  display: block;
+}
+
+.booked-chat__text {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .booked-chat {
+    max-width: clamp(260px, 25vw, 300px);
+  }
+
+  .booked-chat__icon-container {
+    left: clamp(-32px, -3.5vw, -40px);
+    padding: clamp(10px, 1.2vw, 14px);
+  }
+
+  .booked-chat__icon {
+    width: clamp(18px, 1.8vw, 22px);
+    height: clamp(18px, 1.8vw, 22px);
+  }
+}
+
+@media (max-width: 768px) {
+  .booked-chat {
+    max-width: clamp(240px, 85vw, 280px);
+    padding: clamp(8px, 1.2vw, 10px) clamp(12px, 1.5vw, 16px);
+  }
+
+  .booked-chat__icon-container {
+    left: clamp(-28px, -4vw, -36px);
+    padding: clamp(10px, 1.4vw, 12px);
+  }
+
+  .booked-chat__icon {
+    width: clamp(16px, 2vw, 20px);
+    height: clamp(16px, 2vw, 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .booked-chat {
+    max-width: 100%;
+    padding: 10px 14px;
+  }
+
+  .booked-chat__icon-container {
+    left: -32px;
+    padding: 10px;
+  }
+
+  .booked-chat__icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+

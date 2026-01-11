@@ -1,0 +1,189 @@
+/* =========================
+   POTSALE PAINPOINTS
+   ========================= */
+
+.potsale__painpoints {
+  position: relative;
+  width: 100%;
+  padding: clamp(40px, 5vw, 80px) 0;
+  background: var(--color-bg);
+}
+
+.potsale__painpoints .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: clamp(20px, 2.5vw, 40px);
+}
+
+.potsale__painpoints-content {
+  width: 100%;
+  height: 80vh;
+  background-image: url("/images/potsale/pain-points-background.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.potsale__painpoints-center-text {
+  color: var(--color-bg);
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.potsale__painpoints-left,
+.potsale__painpoints-right {
+  position: absolute;
+  top: 8%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.potsale__painpoints-left {
+  left: 0%;
+}
+
+.potsale__painpoints-right {
+  align-items: flex-end;
+  right: 0%;
+}
+
+.potsale__painpoints-right .potsale__painpoints-title,
+.potsale__painpoints-right .potsale__painpoints-list {
+  text-align: right;
+}
+
+.potsale__painpoints-right .potsale__painpoints-list {
+  padding-left: 0;
+  padding-right: clamp(20px, 2.5vw, 32px);
+}
+
+.potsale__painpoints-right .potsale__painpoints-item::before {
+  left: auto;
+  right: -20px;
+}
+
+.potsale__painpoints-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 24px);
+  text-align: center;
+  
+}
+
+.potsale__painpoints-bottom-text {
+  color: var(--color-fg);
+  margin: 0;
+}
+
+.potsale__painpoints-bottom-list {
+  margin: 0;
+  padding-left: clamp(20px, 2.5vw, 32px);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+  align-items: center;
+}
+
+.potsale__painpoints-bottom-item {
+  margin: 0;
+  position: relative;
+}
+
+.potsale__painpoints-bottom-item::before {
+  content: "•";
+  position: absolute;
+  left: -20px;
+}
+
+.potsale__painpoints-title {
+  margin: 0;
+}
+
+.potsale__painpoints-list {
+  margin: 0;
+  padding-left: clamp(20px, 2.5vw, 32px);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.potsale__painpoints-item {
+  margin: 0;
+  position: relative;
+}
+
+.potsale__painpoints-item::before {
+  content: "•";
+  position: absolute;
+  left: -20px;
+}
+
+@media (max-width: 490px) {
+  .potsale__painpoints-content {
+    height: auto;
+    min-height: auto;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 40px);
+  }
+  
+  .potsale__painpoints-center-text {
+    display: none;
+  }
+  
+  .potsale__painpoints-left,
+  .potsale__painpoints-right {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+  .potsale__painpoints-right .potsale__painpoints-title,
+  .potsale__painpoints-right .potsale__painpoints-list {
+    text-align: left;
+  }
+  
+  .potsale__painpoints-right .potsale__painpoints-list {
+    padding-left: clamp(20px, 2.5vw, 32px);
+    padding-right: 0;
+  }
+  
+  .potsale__painpoints-right .potsale__painpoints-item::before {
+    left: -20px;
+    right: auto;
+  }
+  
+  .potsale__painpoints-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: clamp(16px, 2vw, 24px);
+    text-align: left;
+    margin-top: 0;
+  }
+  
+  .potsale__painpoints-bottom-list {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+

@@ -1,0 +1,200 @@
+/* Mobile Navbar - Only visible below 490px */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+}
+
+@media (max-width: 490px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+/* Hamburger Toggle Button */
+.mobile-nav__toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 101;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav__toggle-background {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav__toggle:hover .mobile-nav__toggle-background {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mobile-nav__toggle-line {
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger to X animation */
+.mobile-nav__toggle--open .mobile-nav__toggle-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-nav__toggle--open .mobile-nav__toggle-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-nav__toggle--open .mobile-nav__toggle-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Dropdown Panel */
+.mobile-nav__panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+
+.mobile-nav__panel--open {
+  max-height: 100vh;
+}
+
+.mobile-nav__panel-content {
+  padding: 80px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+.mobile-nav__panel--open .mobile-nav__panel-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation Links */
+.mobile-nav__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.mobile-nav__link {
+  font-family: var(--font-body);
+  font-size: var(--text-nav-item-size);
+  font-weight: var(--text-nav-item-weight);
+  letter-spacing: var(--text-nav-item-letter);
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 12px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  width: 100%;
+}
+
+.mobile-nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.mobile-nav__link:hover {
+  color: var(--nav-text-hover);
+  transform: translateX(4px);
+}
+
+.mobile-nav__link:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.mobile-nav__cta {
+  font-family: var(--font-body);
+  font-size: var(--text-nav-item-size);
+  font-weight: var(--text-nav-item-weight);
+  letter-spacing: var(--text-nav-item-letter);
+  color: #fff;
+  background: #0b4bd6;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 0;
+  text-align: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+.mobile-nav__cta:hover {
+  background: #0043d4;
+  transform: translateY(-2px);
+}
+
+.mobile-nav__cta:active {
+  transform: translateY(0);
+}
+
+/* Backdrop Overlay */
+.mobile-nav__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

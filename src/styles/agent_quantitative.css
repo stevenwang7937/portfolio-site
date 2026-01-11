@@ -1,0 +1,68 @@
+/* =========================
+   AGENT QUANTITATIVE
+   ========================= */
+
+.agent__quantitative {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-color: #030303;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent__quantitative .content-container {
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(40px, 5vw, 80px);
+  padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.agent__quantitative-header {
+  width: 100%;
+  margin-bottom: clamp(40px, 5vw, 80px);
+}
+
+.agent__quantitative-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.agent__quantitative-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agent__quantitative-table thead {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.agent__quantitative-table th {
+  text-align: left;
+  vertical-align: middle;
+  padding: clamp(16px, 2vw, 24px) clamp(12px, 1.5vw, 20px);
+}
+
+.agent__quantitative-table td {
+  text-align: left;
+  vertical-align: middle;
+  padding: clamp(16px, 2vw, 24px) clamp(12px, 1.5vw, 20px);
+}
+
+.agent__quantitative-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.agent__quantitative-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.agent__quantitative-description {
+  width: 100%;
+  margin: 0;
+  margin-top: clamp(40px, 5vw, 80px);
+}
+

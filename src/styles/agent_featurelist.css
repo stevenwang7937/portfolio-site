@@ -1,0 +1,41 @@
+/* =========================
+   AGENT FEATURE LIST
+   ========================= */
+
+.agent__featurelist {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-color: #030303;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent__featurelist .content-container {
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(40px, 5vw, 80px);
+  padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.agent__featurelist-header {
+  width: 100%;
+}
+
+.agent__featurelist-image-wrapper {
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+}
+
+.agent__featurelist-image {
+  width: 100vw;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+

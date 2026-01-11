@@ -1,0 +1,91 @@
+/* =========================
+   OPENTEXT COMPONENTS
+   ========================= */
+
+.opentext__components {
+  position: relative;
+  width: 100%;
+  padding: clamp(80px, 10vw, 160px) 0;
+  background: var(--color-bg);
+}
+
+.opentext__components .content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.opentext__component-list {
+  width: 100%;
+  height: fit-content;
+  border-left: 0.5px solid var(--color-fg);
+  display: flex;
+  flex-direction: column;
+  margin-top: clamp(40px, 5vw, 80px);
+  gap: 10vh;
+}
+
+.opentext__component-buttons,
+.opentext__component-labels,
+.opentext__component-breadcrumbs,
+.opentext__component-menus,
+.opentext__component-paginations {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  width: 100%;
+}
+
+.opentext__component-name {
+  padding-left: 2vw;
+  width: 25%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.opentext__component-name p {
+  margin: 0;
+}
+
+.opentext__component-content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.opentext__component-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 490px) {
+  .opentext__components {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .opentext__component-list {
+    border-left: none;
+    gap: 5vh;
+  }
+
+  .opentext__component-name {
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 5%;
+  }
+  
+  .opentext__component-buttons,
+  .opentext__component-labels,
+  .opentext__component-breadcrumbs,
+  .opentext__component-menus,
+  .opentext__component-paginations {
+    flex-direction: column;
+  }
+  .opentext__component-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+}

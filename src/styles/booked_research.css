@@ -1,0 +1,225 @@
+/* =========================
+   BOOKED RESEARCH
+   ========================= */
+
+.booked__research {
+  width: 100%;
+  min-height: 200vh;
+  height: fit-content;
+  position: relative;
+  background-image: url('/images/booked/research-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 0;
+  padding-bottom: clamp(80px, 10vw, 160px);
+}
+
+.booked__research::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.booked__research-content {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 80px);
+  width: 100%;
+  height: 100%;
+}
+
+.booked__research-header {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  padding-bottom: 0;
+  padding-top: clamp(80px, 5vw, 160px);
+  padding-bottom: clamp(40px, 2.5vh, 80px);
+}
+
+.booked__research-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(120px);
+  -webkit-backdrop-filter: blur(120px);
+  border-bottom: 0px solid rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+
+.booked__research-main {
+  width: 100%;
+  height: fit-content;
+  padding-left: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 80px);
+  position: relative;
+  z-index: 1;
+}
+
+.booked__research-main-header {
+  width: 100%;
+}
+
+.booked__research-columns {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(40px, 6vw, 80px);
+  width: 100%;
+}
+
+.booked__research-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+  flex: 1;
+}
+
+.booked__research-column-title {
+  margin: 0;
+}
+
+.booked__research-cards {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.booked__research-user-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.booked__research-delivered {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+  color: var(--color-fg);
+  text-shadow: none;
+  margin: 0;
+  opacity: 0.7;
+  padding-left: clamp(32px, 4vw, 56px);
+}
+
+.booked__research-competitors {
+  width: 100%;
+  height: fit-content;
+  /* Scales from 10vw at 1024px to 20vw at 1440px, with smooth interpolation */
+  padding-right: clamp(10vw, calc(10vw + 10vw * max(0, min(1, (100vw - 1024px) / (1440px - 1024px)))), 20vw);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 80px);
+  position: relative;
+  z-index: 1;
+}
+
+.booked__research-competitors-header {
+  width: 100%;
+}
+
+.booked__research-competitors-grid {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.booked__research-market {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 20vw;
+  position: relative;
+  z-index: 1;
+}
+
+.booked__research-market-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.booked__research-market-left-header {
+  width: 100%;
+}
+
+.booked__research-market-left-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.booked__research-market-left-image {
+  width: 100%;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+.booked__research-market-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+  padding-top: clamp(20px, 2.5vw, 28px);
+}
+
+.booked__research-market-right-title {
+  margin: 0;
+}
+
+.booked__research-market-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+@media screen and (max-width: 490px) {
+  .booked__research-header{
+    padding-top: 10vh;
+    padding-bottom: 2vh;
+  }
+
+  .booked__research-delivered{
+    display: none;
+  }
+
+  .booked__research-main {
+    align-items: center;
+    padding-left: 5vw;
+    width: 90%;
+  }
+  .booked__research-columns {
+    gap: 4vw;
+  }
+  .booked__research-market {
+    flex-direction: column;
+    gap: 10vh;
+  }
+  .booked__research-market-left {
+    width: 100%;
+  }
+  .booked__research-market-right {
+    width: 100%;
+  }
+}

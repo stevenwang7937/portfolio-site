@@ -1,0 +1,166 @@
+/* =========================
+   BOOKED SCOPE
+   ========================= */
+
+.booked__scope {
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url('/images/booked/scope-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: clamp(80px, 5vw, 160px);
+  padding-bottom: clamp(80px, 5vw, 160px);
+}
+
+.booked__scope-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 56px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.booked__scope-header {
+  width: 100%;
+  margin-bottom: clamp(16px, 2vw, 32px);
+}
+
+.booked__scope-main {
+  display: flex;
+  gap: clamp(32px, 6vw, 180px);
+  align-items: flex-start;
+  width: 100%;
+  margin-left: 22vw;
+  position: relative;
+}
+
+.booked__scope-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.booked__scope-mvp {
+  max-width: 30vw;
+}
+
+.booked__scope-explorations {
+  max-width: 30vw;
+}
+
+.booked__scope-section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  font-weight: var(--weight-medium);
+  font-style: normal;
+  line-height: var(--line-tight);
+  color: var(--color-bg);
+  margin: 0;
+}
+
+.booked__scope-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.5vw, 20px);
+}
+
+.booked__scope-item {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+  color: var(--color-bg);
+  padding-left: clamp(20px, 2.5vw, 32px);
+  position: relative;
+}
+
+.booked__scope-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-bg);
+}
+
+.booked__scope-sublist {
+  list-style: none;
+  padding: 0;
+  margin: clamp(8px, 1vw, 12px) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.booked__scope-subitem {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+  color: var(--color-bg);
+  padding-left: clamp(24px, 3vw, 40px);
+  position: relative;
+}
+
+.booked__scope-subitem::before {
+  content: '•';
+  position: absolute;
+  left: clamp(20px, 2.5vw, 32px);
+  color: var(--color-bg);
+}
+
+.booked__scope-divider {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .booked__scope-main {
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 40px);
+  }
+
+  .booked__scope-divider {
+    display: none;
+  }
+}
+
+@media (min-width: 2500px) {
+  .booked__scope-main {
+    margin-left: 25vw;
+  }
+
+  .booked__scope-mvp {
+    max-width: 22vw;
+  }
+  .booked__scope {
+    min-height: 75vh;}
+}
+
+@media screen and (max-width: 490px) {
+  .booked__scope-main {
+    margin-left: 0;
+    padding-left: 5vw;
+  }
+  .booked__scope-section {
+    max-width: 100%;
+  }
+  .booked__scope-mvp {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,78 @@
+/* =========================
+   BOOKED FURTHER EXPLORATION
+   ========================= */
+
+.booked__further-exploration {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url('/images/booked/further-exploration-background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.booked__further-exploration-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 6vw, 48px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.booked__further-exploration-header {
+  width: 100%;
+}
+
+.booked__further-exploration-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.booked__further-exploration-title {
+  margin: 0 0 80px 0;
+  text-align: center;
+}
+
+.booked__further-exploration-chatboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.booked__further-exploration-chatbox {
+  position: relative;
+}
+
+.booked__further-exploration-chatbox-1 {
+  margin-left: 20vw;
+}
+
+.booked__further-exploration-chatbox-2 {
+  margin-left: 50vw;
+}
+
+.booked__further-exploration-chatbox-3 {
+  margin-left: 30vw;
+}
+
+@media (max-width: 768px) {
+  .booked__further-exploration-chatbox-2 {
+    margin-left: clamp(20px, 3vw, 40px);
+  }
+
+  .booked__further-exploration-chatbox-3 {
+    margin-left: clamp(40px, 6vw, 80px);
+  }
+}
+

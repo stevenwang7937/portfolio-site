@@ -1,0 +1,26 @@
+/* =========================
+   CENTERED SECTION HEADER
+   ========================= */
+
+.centered-section-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.centered-section-header__top {
+  margin: 0;
+}
+
+.centered-section-header__bottom {
+  margin: 0;
+  margin-top: 4px;
+}
+
+.centered-section-header__description {
+  margin: 0;
+  margin-top: 24px;
+}
+

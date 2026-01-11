@@ -1,0 +1,51 @@
+/* =========================
+   BOOKED CORPORATE
+   ========================= */
+
+.booked__corporate {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.booked__corporate-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 6vw, 96px);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.booked__corporate-link {
+  margin: 0px 0 0 0;
+  text-align: center;
+}
+
+.booked__corporate-link a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.booked__corporate-link a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 490px) {
+  .booked__corporate {
+    padding-top: 0vh;
+    padding-bottom: 5vh;
+  }
+  .booked__corporate-content {
+    gap: 10vh;
+  }
+  .booked__corporate-link {
+    font-size: var(--text-body);
+  }
+}

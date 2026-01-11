@@ -1,0 +1,133 @@
+/* =========================
+   JUMP TO RESULT
+   ========================= */
+
+.jumptoresult {
+  width: 100%;
+  height: 35vh;
+  background: #090909;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.jumptoresult__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(36px, 5vw, 60px);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Header with rules */
+.jumptoresult__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.jumptoresult__rule {
+  height: 1px;
+  width: min(560px, 100%);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.jumptoresult__question-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-xs);
+  overflow: visible;
+}
+
+.jumptoresult__question {
+  text-align: center;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Title with icons */
+.jumptoresult__title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 24px);
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.jumptoresult__icon {
+  width: clamp(32px, 3vw, 48px);
+  height: clamp(32px, 3vw, 48px);
+  flex-shrink: 0;
+}
+
+.jumptoresult__title {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.jumptoresult__hover-image {
+  position: fixed;
+  width: 160px;
+  height: 160px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+  transform: translate(0, 0);
+}
+
+.jumptoresult__hover-image-inner {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+  .jumptoresult__question-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .jumptoresult__title-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .jumptoresult__icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .jumptoresult {
+    height: fit-content;
+  }
+  .jumptoresult__inner {
+    gap: 10vh;
+  }
+  
+  .jumptoresult__title-wrapper .jumptoresult__icon {
+    display: none;
+  }
+  
+  .jumptoresult__hover-image {
+    display: none !important;
+  }
+  .jumptoresult__title {
+    font-size: var(--text-display-lg);
+    width: 100%;
+  }
+}
