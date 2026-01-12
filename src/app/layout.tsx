@@ -1,16 +1,94 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ScrollToTop } from "@/components/globalcomponents";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Noe Display font (for display/headings)
+const noeDisplay = localFont({
+  src: [
+    {
+      path: "../noe-display-fonts/NoeDisplay.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../noe-display-fonts/NoeDisplay-RegularItalic.woff",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../noe-display-fonts/fonnts.com-NoeDisplay-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../noe-display-fonts/Noe_Display_Medium_Italic.woff.woff",
+      weight: "500",
+      style: "italic",
+    },
+  ],
+  variable: "--font-display",
+  display: "swap",
+  fallback: ["serif"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Satoshi font (for body text)
+const satoshi = localFont({
+  src: [
+    {
+      path: "../satoshi-fonts/Satoshi-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-LightItalic.woff2",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../satoshi-fonts/Satoshi-BlackItalic.woff2",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-body",
+  display: "swap",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +105,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}
       >
         {children}
         <ScrollToTop />
