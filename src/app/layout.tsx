@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ScrollToTop } from "@/components/globalcomponents";
+import Preloader from "@/components/preloader";
 
 // Noe Display font (for display/headings)
 const noeDisplay = localFont({
@@ -107,6 +108,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}
       >
+        <Preloader />
         {children}
         <ScrollToTop />
       </body>
