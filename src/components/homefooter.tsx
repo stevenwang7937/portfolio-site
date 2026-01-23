@@ -6,7 +6,7 @@ export default function HomeFooter() {
       <div className="home_footer__inner">
         <div className="home_footer__content">
           <p className="text-body home_footer__text home_footer__text--strikethrough">
-            Made with love in by Steven.
+            Made with love by Steven.
           </p>
           <p className="text-body home_footer__text">
             I very much enjoyed this process of expressing myself. Thank you for viewing.
