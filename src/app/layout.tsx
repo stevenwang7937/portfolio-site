@@ -5,7 +5,7 @@ import { ScrollToTop } from "@/components/globalcomponents";
 import Preloader from "@/components/preloader";
 import Script from "next/script";
 
-
+<Preloader />
 // Noe Display font (for display/headings)
 const noeDisplay = localFont({
   src: [
@@ -122,12 +122,9 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body
-        suppressHydrationWarning
-        className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}
-      >
-        <script
+
+
+<script
   defer
   src="https://app.deeprank24.com/sdk/deeprank24-auto-optimize.js"
   data-deeprank-token="1193d7ad834f763321a1a7201ff99e14"
@@ -140,7 +137,13 @@ export default function RootLayout({
 
   
 ></script>
-        <Preloader />
+      </head>
+      <body
+        suppressHydrationWarning
+        className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}
+      >
+       
+
         {children}
         <ScrollToTop />
       </body>
