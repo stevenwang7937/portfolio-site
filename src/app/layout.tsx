@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ScrollToTop } from "@/components/globalcomponents";
 import Preloader from "@/components/preloader";
+import Script from "next/script";
+
 
 // Noe Display font (for display/headings)
 const noeDisplay = localFont({
@@ -104,19 +106,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RDJ8HNRG2G"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-RDJ8HNRG2G');
+            `,
+          }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}
       >
-        <Preloader />
-        {children}
-        <ScrollToTop />
-      </body>
-    </html>
-  );
-}
-
-<script
+        <script
   defer
   src="https://app.deeprank24.com/sdk/deeprank24-auto-optimize.js"
   data-deeprank-token="1193d7ad834f763321a1a7201ff99e14"
@@ -125,4 +136,19 @@ export default function RootLayout({
   data-deeprank-crawl="auto"
   data-deeprank-crawl-limit="80"
   data-deeprank-crawl-version="v3"
+
+
+  
 ></script>
+        <Preloader />
+        {children}
+        <ScrollToTop />
+      </body>
+    </html>
+  );
+}
+
+
+
+
+
