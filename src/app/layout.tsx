@@ -115,3 +115,14 @@ export default function RootLayout({
     </html>
   );
 }
+
+<script
+  defer
+  src="https://app.deeprank24.com/sdk/deeprank24-auto-optimize.js"
+  data-deeprank-token="1193d7ad834f763321a1a7201ff99e14"
+  data-deeprank-site="https://stevenwangux.com/"
+  data-deeprank-connection="cms_1170863fa7538ef2"
+  data-deeprank-crawl="auto"
+  data-deeprank-crawl-limit="80"
+  data-deeprank-crawl-version="v3"
+></script>
