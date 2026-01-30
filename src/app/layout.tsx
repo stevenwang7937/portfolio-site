@@ -99,20 +99,18 @@ export const metadata: Metadata = {
   description: "Steven is a full-stack product designer and web developer based in Vancouver, Canada.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-       <head>
+      <body className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}>
         {/* Google tag (gtag.js) */}
-        <script
-          async
+        <Script
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-RDJ8HNRG2G"
         />
-        <script
+        <Script
+          id="ga4-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -122,24 +120,18 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body
-        suppressHydrationWarning
-        className={`${noeDisplay.variable} ${satoshi.variable} antialiased`}
-      >
-        <script
-  defer
-  src="https://app.deeprank24.com/sdk/deeprank24-auto-optimize.js"
-  data-deeprank-token="1193d7ad834f763321a1a7201ff99e14"
-  data-deeprank-site="https://stevenwangux.com/"
-  data-deeprank-connection="cms_1170863fa7538ef2"
-  data-deeprank-crawl="auto"
-  data-deeprank-crawl-limit="80"
-  data-deeprank-crawl-version="v3"
 
-
-  
-></script>
+        {/* DeepRank24 */}
+        <Script
+          strategy="afterInteractive"
+          src="https://app.deeprank24.com/sdk/deeprank24-auto-optimize.js"
+          data-deeprank-token="1193d7ad834f763321a1a7201ff99e14"
+          data-deeprank-site="https://stevenwangux.com/"
+          data-deeprank-connection="cms_1170863fa7538ef2"
+          data-deeprank-crawl="auto"
+          data-deeprank-crawl-limit="80"
+          data-deeprank-crawl-version="v3"
+        />
         <Preloader />
         {children}
         <ScrollToTop />
